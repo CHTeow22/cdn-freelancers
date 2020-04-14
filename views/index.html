@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>CDN Freelancers</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="jumbotron jumbotron-fluid">
+	  <div class="container">
+	    <h2 class="display-4">CDN - Complete Developer Network</h2>
+	  </div>
+	</div>
+
+	<div class="container">
+		<h4>
+			To register new user: <button id="register" type="button" class="btn btn-info">Register</button>
+		</h4>
+
+		<h3>List of Registered Freelancers</h3>
+		<table class="table table-sm table-bordered">
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Name</th>
+		      <th scope="col">Email</th>
+		      <th scope="col">Phone Number</th>
+		      <th scope="col">Skill Set</th>
+		      <th scope="col">Hobby</th>
+		      <th scope="col">Action</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+		  	<% for(var i=0; i < Object.keys(users).length; i++) { %>
+			   <tr>
+			   	 <th scope="row"><%= users[i].id %></th>
+			     <td><%= users[i].username %></td>
+			     <td><%= users[i].email %></td>
+			     <td><%= users[i].phone %></td>
+			     <td><%= users[i].skillsets %></td>
+			     <td><%= users[i].hobby %></td>
+			     <td><button type="button" class="btn btn-link edit">Edit</button></td>
+			   </tr>
+			<% } %>
+		  </tbody>
+		</table>
+	</div>
+
+</body>
+</html>
+
+<script type="text/javascript">
+	$('.edit').on("click", function(e) {
+		var id = $(this).closest('th').val();
+		console.log('AA click', id)
+		window.location.href = '/edit?id='+id;
+	})
+
+	$('#register').on("click", function(e) {
+		window.location.href = '/register';
+	})
+</script>
