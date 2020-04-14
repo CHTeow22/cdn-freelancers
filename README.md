@@ -20,6 +20,7 @@
 - Express (for serving frontend)
 - JavaScripts (to perform user's action)
 - database is MySQL 
+- CSS (Bootstrap)
 
  ### Side Note:
  - Sorry cloudn't complete the edit and delete function 
