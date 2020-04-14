@@ -15,7 +15,12 @@
    
    The prompt has option to register new user again or go to full lists.
    
-   
+### Technology used
+- nodeJS (for APIs and routes)
+- Express (for serving frontend)
+- JavaScripts (to perform user's action)
+- database is MySQL 
+
  ### Side Note:
  - Sorry cloudn't complete the edit and delete function 
  - However, the UI is ready.
